@@ -37,12 +37,10 @@ cask "monodraw"
 cask "slack"
 cask "spotify"
 cask "vagrant"
-cask "vagrant-manager"
 cask "virtualbox"
 cask "vlc"
 cask "visual-studio-code"
 cask "xquartz"
 
 #Apps from Appstore
-mas "serial", id: 111
 mas "Trello", id: 1278508951
