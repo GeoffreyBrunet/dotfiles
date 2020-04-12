@@ -1,0 +1,46 @@
+export ZSH="/Users/geoffreybrunet/.oh-my-zsh"
+
+ZSH_THEME="cdimascio-lambda"
+source $ZSH/oh-my-zsh.sh
+
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+
+plugin=(
+    ansible
+	docker
+    docker-compose
+    emoji
+    git
+    git-prompt
+    golang
+	kubectl
+	osx
+	pip
+    terraform
+    themes
+    vagrant
+    vagrant-prompt
+    virtualenv
+    vscode
+)
+
+source <(kubectl completion zsh)
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+unset zle_bracketed_paste
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/
+PATH=$JAVA_HOME/bin:$PATH
+LIBRESSL_REDIRECT_STUB_ABORT=1
