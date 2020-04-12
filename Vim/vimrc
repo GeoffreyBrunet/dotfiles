@@ -1,0 +1,34 @@
+" Permet à Vim de lire le dossier de configuration
+runtime! config/**/*.vim
+
+" Empêche vim d'avoir une compatibilité vi trop affirmée
+set nocompatible
+
+" Initialisation de pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+" Active la coloration syntaxique
+filetype plugin indent on
+syntax enable
+
+" Utilise utf-8 comme codage de caractères
+set encoding=utf-8
+
+" Affiche les numéros de ligne
+set number
+
+" Affiche la colone utilisée
+set ruler
+
+" Permet d'utiliser la souris dans Vim
+set mouse=a
+
+" Bloque les notifications sur les erreurs
+set noerrorbells
+set novisualbell
+
+" Désactive les sauvegardes sur Vim
+set nobackup
+set nowritebackup
+set noswapfile
